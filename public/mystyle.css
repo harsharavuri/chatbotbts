@@ -1,0 +1,14 @@
+.inp{
+	border:1px solid black;
+	padding: 1%;
+	}
+h1{
+	text-align:center;
+}
+#container{
+	width:40%;
+	margin-left:30%;
+	padding:1%;
+	text-align:center;
+	border:1px solid black
+}

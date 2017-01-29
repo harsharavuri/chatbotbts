@@ -1,5 +1,30 @@
-html
+doctype html
+html(lang="en")
   head
-    title= title
+    title= pageTitle
+    link(href='mystyle.css', rel='stylesheet')
+    script(type='text/javascript').
+     
   body
-    h1= message
+    h1 Report
+    #container.table
+      p.inp.
+          Name= !{name.split('=')[1]}	  
+      p.inp.
+          Age= !{age.split('=')[1]}
+      p.inp.
+         
+          BloodGroup= !{bloodgroup.split('=')[1]}
+      p.inp.  
+          
+          Sex= !{sex.split('=')[1]}
+      p.inp.  
+        
+          OtherInfo= !{otherinfo.split('=')[1]}
+      p.inp.
+        	  
+          Symptom= !{symptom.split('=')[1]}
+      p.inp.
+        	  
+          BodyPart= !{bodypart.split('=')[1]}
+		

@@ -21,10 +21,20 @@ var numUsers = 0;
 
 
 app.get('/pdf', function(request, res){
-	//res.render('sample', { title: 'Hey', message: 'Hello there!' })
+	
+	var s = request.url;
+	s = s.split('?')[1];
+	
+	//res.send(s);
+	var params = s.split('&');
+	console.log(params);
+	var i = params.length-1; 
+	//console.log(params);
+	
+	//res.render('sample', paramValues:params} );
+	res.render('sample', { name:params[0], age:params[1], bloodgroup:params[2], sex:params[3], otherinfo:params[4], symptom:params[5], bodypart:params[6] })
 	//res.send("Hello World");
-	res.send(request.headers);
-	/*	var headers = request.headers;
+/*		var headers = request.headers;
   var method = request.method;
   var url = request.url;
   var body = [];
@@ -34,8 +44,9 @@ app.get('/pdf', function(request, res){
     body.push(chunk);
   }).on('end', function() {
     body = Buffer.concat(body).toString();
-    console.log(headers);
-	console.log(method);
+    console.log(request);
+	//console.log(headers);
+	//console.log(method);
 	// At this point, we have the headers, method, url and body, and can now
     // do whatever we need to in order to respond to this request.
   });*/
@@ -49,7 +60,7 @@ server.on('request', function(request, response){
 	  var method = request.method;
 	  var url = request.url;
 	  var body = [];
-	  console.log(headers);
+	  //console.log(headers);
 		request.on('data', function(chunk) {
 		  body.push(chunk);
 		}).on('end', function() {
