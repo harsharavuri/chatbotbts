@@ -54,26 +54,6 @@ app.get('/pdf', function(request, res){
 
 app.set('view engine', 'pug');
 
-server.on('request', function(request, response){
-	//
-	  var headers = request.headers;
-	  var method = request.method;
-	  var url = request.url;
-	  var body = [];
-	  //console.log(headers);
-		request.on('data', function(chunk) {
-		  body.push(chunk);
-		}).on('end', function() {
-		  body = Buffer.concat(body).toString();
-		  // at this point, `body` has the entire request body stored in it as a string
-		});
-	
-});
-
-
-
-
-
 
 io.on('connection', function (socket) {
   var addedUser = false;
