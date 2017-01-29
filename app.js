@@ -20,11 +20,28 @@ app.use(express.static(__dirname + '/public'));
 var numUsers = 0;
 
 
-app.get('/pdf', function(req, res){
-	res.send("Hello World");
-});
+app.get('/pdf', function(request, res){
+	//res.render('sample', { title: 'Hey', message: 'Hello there!' })
+	//res.send("Hello World");
+	res.send(request.headers);
+	/*	var headers = request.headers;
+  var method = request.method;
+  var url = request.url;
+  var body = [];
+  request.on('error', function(err) {
+    console.error(err);
+  }).on('data', function(chunk) {
+    body.push(chunk);
+  }).on('end', function() {
+    body = Buffer.concat(body).toString();
+    console.log(headers);
+	console.log(method);
+	// At this point, we have the headers, method, url and body, and can now
+    // do whatever we need to in order to respond to this request.
+  });*/
+	});
 
-
+app.set('view engine', 'pug');
 
 server.on('request', function(request, response){
 	//
